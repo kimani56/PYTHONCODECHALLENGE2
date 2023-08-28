@@ -43,3 +43,27 @@ class Customer:
     @classmethod
     def add_customer(cls, customer):
         cls.customers.append(customer)
+
+    @classmethod
+    def find_by_name(cls, name):
+
+        found = None
+        for customer in cls.customers:
+            if customer.full_name() == name:
+                found = customer
+                break
+
+        return found
+    
+    @classmethod
+    def find_all_by_given_name(cls, name):
+        found_names = []
+        for customer in cls.customers:
+            if customer.given_name == name:
+                found_names.append(customer)
+        return found_names
+            
+
+
+
+     
